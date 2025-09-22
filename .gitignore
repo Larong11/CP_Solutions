@@ -1,6 +1,13 @@
 # Prerequisites
 *.d
 
+# VSCode settings
+.vscode/*
+
+# Debug files
+**/*.dSYM/
+**/*.txt
+
 # Compiled Object files
 *.slo
 *.lo
