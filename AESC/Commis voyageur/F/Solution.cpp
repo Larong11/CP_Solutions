@@ -37,7 +37,6 @@ int check(int &f, int &s, vector<int> &diag1, vector<int> &diag2, int &numDiag1,
 }
 const double k = 1/2.0;
 double odd(int &iter, int &numIter) {
-    // return 1;
     return exp(k * -double(iter) / double(numIter));
 }
 
@@ -66,13 +65,6 @@ void solve() {
     int n;
     cin >> n;
     vector<int> diag1(2 * n - 1, 0), diag2(2 * n - 1, 0);
-    // int numDiag1 = 1;
-    // int numDiag2 = 5;
-    // for (int i = 0; i < n; i++) {
-    //     int x = i, y = n - i - 1;
-    //     diag1[x + y]++;
-    //     diag2[n - x + y - 1]++;
-    // }
     vector<int> positions(n);
     for (int i = 0; i < n; i++) {
         positions[i] = n - i - 1;
