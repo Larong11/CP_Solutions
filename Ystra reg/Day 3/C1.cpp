@@ -24,6 +24,14 @@ void solve() {
     int i = 0, j = 1, k = 2;
     int sum0 = a[i], sum1 = a[j];
     int dif = 1e18;
+    if (n == 3) {
+        sum0 = a[0];
+        sum1 = a[1];
+        int sum2 = a[2];
+        cout << max(sum0, max(sum1, sum2)) - min(sum0, min(sum1, sum2)) << '\n';
+        cout << 1 << ' ' << 2 << ' ' << 3 << '\n';
+        return;
+    }
     int res0, res1, res2;
     for (i; i < n; i++) {
         while ((j > i or j + 2 < i) and sum0 + a[j] <= sum / 3) {
@@ -33,15 +41,15 @@ void solve() {
             if (j >= n) {
                 j -= n;
             }
-            if (k >= n) {
-                k -= n;
-            }
             if (j == k) {
                 k++;
                 sum1 += a[j];
             }
+            if (k >= n) {
+                k -= n;
+            }
         }
-        while ((k + 1 < i or k > i) and sum1 + a[k] <= sum / 3) {
+        while ((k + 1 < i or k > i) and sum1 + a[k] <= sum - sum0 - sum1) {
             sum1 += a[k];
             k++;
             if (k >= n) {
@@ -83,15 +91,15 @@ void solve() {
             if (j >= n) {
                 j -= n;
             }
-            if (k >= n) {
-                k -= n;
-            }
             if (j == k) {
                 k++;
                 sum1 += a[j];
             }
+            if (k >= n) {
+                k -= n;
+            }
         }
-        while ((k + 1 < i or k > i) and sum1 <= sum / 3) {
+        while ((k + 1 < i or k > i) and sum1 + a[k] <= sum - sum0 - sum1) {
             sum1 += a[k];
             k++;
             if (k >= n) {

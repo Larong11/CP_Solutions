@@ -2,13 +2,13 @@
 
 #pragma GCC optimize("03")
 #pragma GCC optimize("unroll-loops")
-// #pragma GCC target("avx,avx2,bmi2,fma")
+#pragma GCC target("avx,avx2,bmi2,fma")
 
 
 using namespace std;
 using ll = long long;
 using ld = long double;
-// #define int ll
+#define int ll
 #define double ld
 const int MOD = 1e9 + 7;
 const double eps = 1e-6;
